@@ -7,7 +7,7 @@
 _obj
 _test
 
-*.DS_Store
+**/.DS_Store
 .env
 
 # Go specific

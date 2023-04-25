@@ -1,0 +1,23 @@
+service: go-img
+
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: provided.al2
+  stage: dev
+  region: eu-central-1
+  architecture: x86_64
+  ecr:
+    images:
+      go-img:
+        path: .
+
+functions:
+  main:
+    image:
+      name: go-img
+    events:
+      - http:
+          path: /image/{pathToImage}
+          method: get
